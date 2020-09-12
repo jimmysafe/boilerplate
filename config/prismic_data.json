@@ -1,0 +1,178 @@
+{
+    "Main" : {
+      "title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1",
+          "label" : "Title",
+          "placeholder" : "Page Title"
+        }
+      },
+      "uid" : {
+        "type" : "UID",
+        "config" : {
+          "label" : "uid",
+          "placeholder" : "Unique Page Identifier"
+        }
+      },
+      "body" : {
+        "type" : "Slices",
+        "fieldset" : "Slice zone",
+        "config" : {
+          "labels" : {
+            "photos" : [ ],
+            "videos" : [ ],
+            "corsi" : [ ],
+            "about_me" : [ ],
+            "contact_form" : [ ]
+          },
+          "choices" : {
+            "photos" : {
+              "type" : "Slice",
+              "fieldset" : "Photos",
+              "description" : "Add your photos",
+              "icon" : "add_a_photo",
+              "display" : "grid",
+              "non-repeat" : { },
+              "repeat" : {
+                "photo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "Photo"
+                  }
+                },
+                "caption" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                    "label" : "Caption",
+                    "placeholder" : "Photo Caption"
+                  }
+                }
+              }
+            },
+            "videos" : {
+              "type" : "Slice",
+              "fieldset" : "Videos",
+              "description" : "Videos section",
+              "icon" : "play_circle_filled",
+              "display" : "grid",
+              "non-repeat" : { },
+              "repeat" : {
+                "videoid" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading6",
+                    "label" : "Youtube Video ID"
+                  }
+                },
+                "caption" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                    "label" : "Video Caption",
+                    "placeholder" : "Add a video caption"
+                  }
+                }
+              }
+            },
+            "corsi" : {
+              "type" : "Slice",
+              "fieldset" : "Corsi",
+              "description" : "Aggiungi corsi qui",
+              "icon" : "euro_symbol",
+              "display" : "list",
+              "non-repeat" : { },
+              "repeat" : {
+                "course_photo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "Course Photo"
+                  }
+                },
+                "course_title" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "single" : "heading2",
+                    "label" : "Course Title",
+                    "placeholder" : "Titolo Corso"
+                  }
+                },
+                "course_content" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                    "label" : "Course Content",
+                    "placeholder" : "Contenuto Corso"
+                  }
+                }
+              }
+            },
+            "about_me" : {
+              "type" : "Slice",
+              "fieldset" : "About Me",
+              "description" : "Sezione About me",
+              "icon" : "face",
+              "display" : "grid",
+              "non-repeat" : {
+                "photo" : {
+                  "type" : "Image",
+                  "config" : {
+                    "constraint" : { },
+                    "thumbnails" : [ ],
+                    "label" : "Photo"
+                  }
+                },
+                "content" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "multi" : "paragraph, preformatted, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                    "label" : "Content",
+                    "placeholder" : "About Me Content Text"
+                  }
+                }
+              },
+              "repeat" : { }
+            },
+            "contact_form" : {
+              "type" : "Slice",
+              "fieldset" : "Contact Form",
+              "description" : "add a contact form",
+              "icon" : "email",
+              "display" : "list",
+              "non-repeat" : {
+                "added" : {
+                  "type" : "Boolean",
+                  "config" : {
+                    "default_value" : true,
+                    "label" : "Added"
+                  }
+                }
+              },
+              "repeat" : { }
+            }
+          }
+        }
+      }
+    },
+    "Seo" : {
+      "meta_title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading6",
+          "label" : "Meta Title"
+        }
+      },
+      "meta_description" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph",
+          "label" : "Meta Description"
+        }
+      }
+    }
+  }

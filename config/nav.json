@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Photos",
+        "url": "photos",
+        "icon": "/images/camera.svg"
+    },
+    {
+        "name": "Videos",
+        "url": "videos",
+        "icon": "/images/video.svg"
+    },
+    {
+        "name": "Courses",
+        "url": "courses",
+        "icon": "/images/award.svg"
+    },
+    {
+        "name": "About",
+        "url": "about",
+        "icon": "/images/user.svg"
+    },
+    {
+        "name": "Blog",
+        "url": "blog",
+        "icon": "/images/user.svg"
+    }
+]
