@@ -1,7 +1,7 @@
-import React from 'react'
 import { getPosts } from '../../prismic/queries'
 import { linkResolver, hrefResolver } from '../../prismic/prismic-configuration'
 import Link from 'next/link'
+import { blogActive } from '../../utils'
 
 const Blog = ({ posts }) => {
     console.log(posts)
@@ -16,8 +16,15 @@ const Blog = ({ posts }) => {
     )
 }
 
-Blog.getInitialProps = async() => {
+Blog.getInitialProps = async({ res }) => {
     const posts = await getPosts()
+    if(!blogActive){
+        res.writeHead(301, {
+            Location: '/'
+            });
+        res.end();
+        return {}
+    }
     return {
         posts
     }

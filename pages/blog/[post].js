@@ -1,5 +1,6 @@
 import { getSinglePost } from "../../prismic/queries"
 import { useRouter } from 'next/router'
+import { blogActive } from '../../utils'
 
 const Post = ({ post }) => {
     const router = useRouter()
@@ -19,6 +20,13 @@ const Post = ({ post }) => {
 
 Post.getInitialProps = async({ res, query }) => {
     const post = await getSinglePost(query.post)
+    if(!blogActive){
+        res.writeHead(301, {
+            Location: '/'
+            });
+        res.end();
+        return {}
+    }
     if(!post) {
         res.writeHead(301, {
             Location: '/404'
