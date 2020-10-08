@@ -28,3 +28,8 @@ export const getSinglePage = async (uid) => {
     const page = await Client().getByUID("page", uid)
     return page
 }
+
+export const getNav = async () => {
+  const nav = await Client().getByUID("header_nav", "navbar")
+  return nav
+}

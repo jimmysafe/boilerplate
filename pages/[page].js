@@ -9,7 +9,7 @@ export default function Page({ page }) {
         return null
     }
 
-    console.log(page)
+    // console.log(page)
 
     return (
         <>
@@ -25,7 +25,7 @@ export default function Page({ page }) {
     )
 }
 
-Page.getInitialProps = async({ res, query }) => {
+export async function getServerSideProps({ res, query }) {
     const page = await getSinglePage(query.page)
     if(!page && res && query.page !== 'blog') {
         res.writeHead(301, {
@@ -34,5 +34,9 @@ Page.getInitialProps = async({ res, query }) => {
         res.end();
         return {}
     }
-    return { page }
-}
+    return {
+      props: {
+          page
+      }
+    }
+  }

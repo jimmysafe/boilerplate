@@ -1,12 +1,12 @@
 import React from 'react'
 import Nav from './Nav'
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
     return (
         <>
         <Nav />
         <main>
-            {children}
+            {props.children}
         </main>
         </>
     )

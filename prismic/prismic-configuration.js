@@ -21,17 +21,13 @@ const createClientOptions = (req = null, prismicAccessToken = null) => {
 export const linkResolver = (doc) => {
   if (doc.type === 'page') {
     return `/${doc.uid}`
-  } else if(doc.type === 'blog_post'){
-    return `/blog/${doc.uid}`
-  }
+  } 
   return '/'
 }
 
 export const hrefResolver = (doc) => {
   if (doc.type === 'page') {
     return '/[page]'
-  } else if (doc.type === 'blog_post') {
-    return '/blog/[post]'
-  }
+  } 
   return '/'
 }
